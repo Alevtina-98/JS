@@ -1,0 +1,35 @@
+{
+  "name": "2.1-code-style",
+  "version": "1.0.0",
+  "description": "To make it easy for you to get started with GitLab, here's a list of recommended next steps.",
+  "main": "percentage-of-completion.js",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,jsx}\"&& eslint --fix \"**/*.{js,jsx}\"",
+    "lint": "prettier --check \"**/*.{js,jsx}\" && eslint \"**/*.{js,jsx}\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "author": "Alina Lysenko",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.51.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.0.2",
+    "prettier": "3.0.3"
+  },
+  "dependencies": {
+    "cli-progress": "^3.12.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+    "prettier --write",
+    "eslint --fix"
+    ]
+  }
+}
